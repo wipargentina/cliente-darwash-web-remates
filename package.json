@@ -9,18 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "bootstrap": "^5.2.1",
+    "contentful": "^9.3.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "next": "12.3.1",
     "prettier": "^2.7.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.55.0"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "bootstrap": "^5.2.3",
     "eslint": "^8.24.0",
-    "eslint-config-next": "^12.3.1"
+    "eslint-config-next": "^12.3.1",
+    "react-bootstrap": "^2.7.2",
+    "sass": "^1.60.0"
   }
 }
