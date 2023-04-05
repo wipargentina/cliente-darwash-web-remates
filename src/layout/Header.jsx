@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function Header() {
   return (
-    <Navbar bg="primary" variant="dark" expand="lg">
+    <Navbar bg="primary" variant="dark" expand="md">
       <Container>
         <Link href="/" passHref>
           <Navbar.Brand>Darwash</Navbar.Brand>
