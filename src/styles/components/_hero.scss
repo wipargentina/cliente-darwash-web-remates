@@ -1,0 +1,25 @@
+.hero {
+  min-height: 80vh;
+  width: 100%;
+
+  background-size: cover;
+  background-image: url('/images/background.png');
+
+  &-content {
+    padding-top: 15vh;
+    color: white;
+
+    h1 {
+      font-size: 4.4rem;
+      font-weight: 900;
+    }
+    h4 {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      margin-bottom: 30px;
+    }
+  }
+  &-remates {
+    padding-top: 12vh;
+  }
+}

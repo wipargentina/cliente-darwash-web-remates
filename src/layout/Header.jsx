@@ -3,12 +3,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+import Logo from '@assets/logo-white.svg';
+import Image from 'next/image';
+
 function Header() {
   return (
-    <Navbar bg="primary" variant="dark" expand="md">
+    <Navbar bg="primary" variant="dark" expand="md" sticky="top">
       <Container>
         <Link href="/" passHref>
-          <Navbar.Brand>Darwash</Navbar.Brand>
+          <Navbar.Brand>
+            <Image src={Logo} alt="" width={160} height={60} />
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -25,6 +30,12 @@ function Header() {
             <Link href="/contacto" passHref>
               <Nav.Link>Contacto</Nav.Link>
             </Link>
+            <a className="nav-link" href="https://www.instagram.com/darwash.sa/" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a className="nav-link nav-session" href="https://wipargentina.com" target="_blank" rel="noopener noreferrer">
+              <i className="fa-solid fa-lock"></i> Iniciar Sesion
+            </a>
           </Nav>
         </Navbar.Collapse>
       </Container>
