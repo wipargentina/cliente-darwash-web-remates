@@ -1,6 +1,5 @@
 import FormRegister from '@components/FormRegister';
 import { createClient } from 'contentful';
-import { useRouter } from 'next/router';
 
 export default function Remate({ remate }) {
   const { title, cover, place, date } = remate;

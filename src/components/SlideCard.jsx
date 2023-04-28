@@ -4,8 +4,6 @@ import { Button } from 'react-bootstrap';
 export default function SlideCard({ remate }) {
   const { id } = remate.sys;
   const { title, place, slug, cover, date } = remate.fields;
-  const event = new Date(date);
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   //console.log(event.toLocaleDateString('de-DE', options));
   return (
     <div className="slide-item">
