@@ -1,17 +1,21 @@
 import RemateCard from '@components/RemateCard';
+import formatDate from '@utils/formatDate';
 import { createClient } from 'contentful';
 
 export default function Remates({ remates }) {
-  console.log(remates);
   return (
-    <>
+    <section>
       <div className="container">
         <h1>Remates</h1>
-        {remates?.map((remate) => (
-          <RemateCard key={remate.sys.id} remate={remate} />
-        ))}
+        <div className="row">
+          {remates?.map((remate) => (
+            <div key={remate.sys.id} className="col-md-3">
+              <RemateCard remate={remate} />
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+    </section>
   );
 }
 
@@ -21,7 +25,13 @@ export async function getServerSideProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const res = await client.getEntries({ content_type: 'remates' });
+  const now = new Date();
+  const formatNow = formatDate(now);
+
+  const res = await client.getEntries({
+    content_type: 'remates',
+    'fields.date[gte]': formatNow,
+  });
 
   return {
     props: {

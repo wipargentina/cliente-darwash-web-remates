@@ -1,15 +1,11 @@
-import RemateCard from '@components/RemateCard';
+import Hero from '@components/Hero';
+import formatDate from '@utils/formatDate';
 import { createClient } from 'contentful';
 
 export default function Home({ remates }) {
   return (
     <>
-      <div className="container">
-        <h1>Welcome Darwash Web!!!</h1>
-        {remates?.map((remate) => (
-          <RemateCard key={remate.sys.id} remate={remate} />
-        ))}
-      </div>
+      <Hero remates={remates} />
     </>
   );
 }
@@ -20,7 +16,15 @@ export async function getServerSideProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const res = await client.getEntries({ content_type: 'remates' });
+  const now = new Date();
+  const formatNow = formatDate(now);
+  console.log(formatNow);
+
+  const res = await client.getEntries({
+    content_type: 'remates',
+    limit: 2,
+    'fields.date[gte]': formatNow,
+  });
 
   return {
     props: {

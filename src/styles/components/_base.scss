@@ -9,5 +9,17 @@ body {
 }
 
 main {
+}
+
+section {
   padding: 60px 0;
+  //background-color: green;
+  h1 {
+    text-transform: uppercase;
+    font-family: 'Rotis', sans-serif;
+    font-weight: 600;
+    color: $primary;
+    letter-spacing: 0.04rem;
+    margin-bottom: 30px;
+  }
 }

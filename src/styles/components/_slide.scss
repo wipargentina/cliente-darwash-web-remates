@@ -1,0 +1,46 @@
+.slide {
+  &-content {
+    background-color: rgba($primary, 0.8);
+    padding: 30px;
+    color: white;
+
+    h3 {
+      border-bottom: 1px solid rgba(white, 0.3);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      font-family: 'Rotis', sans-serif;
+      letter-spacing: 0.04rem;
+
+      text-transform: uppercase;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(white, 0.1);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+  }
+
+  &-image {
+    background-color: #fff;
+    padding: 4px;
+    margin-right: 12px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &-text {
+    h5 {
+      margin-bottom: 4px;
+    }
+    p {
+      margin-bottom: 2px;
+      font-size: 1rem;
+      line-height: 1.2rem;
+    }
+  }
+}
