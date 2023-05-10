@@ -10,8 +10,8 @@ export default function Hero({ remates }) {
         <div className="row justify-content-between">
           <div className="col-md-5 col-lg-6 col-xl-6">
             <div className="hero-content">
-              <h1>Lorem ipsum dolor sit amet</h1>
-              <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, dignissimos?</h4>
+              <h1>Líderes en el Mercado Ganadero</h1>
+              <h4>Una trayectoria de confianza y profesionalismo en la consignación y remates de ganado vacuno</h4>
               <Link href="/nosotros">
                 <p className="btn btn-outline-light">Más información</p>
               </Link>
