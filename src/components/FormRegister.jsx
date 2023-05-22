@@ -4,6 +4,7 @@ import { useForm } from 'hooks/useForm';
 import leads from 'services/leads';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import moment from 'moment';
 
 const makeRandomId = (length) => {
   let result = '';
@@ -96,9 +97,9 @@ export default function FormRegister({ remate }) {
         </>
       ) : (
         <Form onSubmit={handelSubmit}>
-          <h4>Lorem ipsum dolor sit</h4>
+          <h4>Solitá más información</h4>
           <p>
-            {title} - {date}
+            Remate: {title} (<span className="">{moment(date).format('dddd D MMMM')}</span>)
           </p>
           <div className="row">
             <div className="col-md-6">

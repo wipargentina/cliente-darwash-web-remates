@@ -6,20 +6,19 @@ export default function Nosotros() {
         <div className="row justify-content-between">
           <div className="col-md-5">
             <p>
-              En Darwash S.A nos dedicamos a ofrecer soluciones a medida para los productores ganaderos del sur de la provincia de Córdoba. Nuestra empresa cuenta con una amplia trayectoria en el
-              mercado, con más de 65 años de experiencia en la comercialización de hacienda bovina.
+              Nos dedicamos a ofrecer soluciones a medida para los productores ganaderos del sur de la provincia de Córdoba. Nuestra empresa cuenta con una amplia trayectoria en el mercado, con más de
+              65 años de experiencia en la comercialización de hacienda bovina.
             </p>
             <p>
               Nos enfocamos en brindar un servicio de calidad y atención personalizada a cada uno de nuestros clientes. Nuestro equipo de profesionales altamente capacitados está a tu disposición para
               asesorarte y ayudarte en todo lo que necesites. Trabajamos con un enfoque centrado en el cliente, garantizando la satisfacción de sus necesidades y expectativas.
             </p>
             <p>
-              En Darwash S.A nos enorgullece ofrecer un servicio de consignación de ganado vacuno de alta calidad, así como la realización de remates físicos y televisados de gordos, invernada y
-              reproductores. Además, nos aseguramos de cumplir con los más altos estándares de bienestar animal y responsabilidad social y ambiental.
+              Nos enorgullece ofrecer un servicio de consignación de ganado vacuno de alta calidad, así como la realización de remates físicos y televisados de gordos, invernada y reproductores.
+              Además, nos aseguramos de cumplir con los más altos estándares de bienestar animal y responsabilidad social y ambiental.
             </p>
             <p>
-              En resumen, en Darwash S.A encontrarás una empresa comprometida con la calidad, la atención al cliente y el bienestar animal. ¡Descubre todo lo que podemos hacer por ti y tus negocios
-              ganaderos!
+              En Darwash S.A encontrarás una empresa comprometida con la calidad, la atención al cliente y el bienestar animal. ¡Descubre todo lo que podemos hacer por ti y tus negocios ganaderos!
             </p>
           </div>
           <div className="col-md-6">

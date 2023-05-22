@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
+import moment from 'moment';
 
 export default function SlideCard({ remate }) {
   const { id } = remate.sys;
@@ -13,8 +14,8 @@ export default function SlideCard({ remate }) {
         </Button>
       </Link>
       <div className="slide-text">
-        <h5>{title}</h5>
-        <p>{date}</p>
+        <h5 className="mb-0">{title}</h5>
+        <p className=" text-uppercase">{moment(date).format('dddd D MMMM')}</p>
         <p>{place}</p>
       </div>
     </div>
