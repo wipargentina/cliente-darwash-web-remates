@@ -5,7 +5,7 @@ import moment from 'moment';
 
 export default function Remate({ remate }) {
   const { title, cover, place, date, body, flyer, document, videos } = remate;
-  console.log(remate);
+  console.log(document);
   return (
     <section className="remate">
       <div className="container">
