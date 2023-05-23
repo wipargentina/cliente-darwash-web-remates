@@ -9,7 +9,7 @@ export default function Remates({ remates }) {
         <h1>Remates</h1>
         <div className="row">
           {remates?.map((remate) => (
-            <div key={remate.sys.id} className="col-md-3">
+            <div key={remate.sys.id} className="col-md-4">
               <RemateCard remate={remate} />
             </div>
           ))}
