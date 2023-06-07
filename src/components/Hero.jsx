@@ -11,7 +11,7 @@ export default function Hero({ remates }) {
           <div className="col-md-5 col-lg-6 col-xl-6">
             <div className="hero-content">
               <h1>Líderes en el mercado ganadero</h1>
-              <h4>Una trayectoria de confianza y profesionalismo en la consignación y remates de ganado vacuno</h4>
+              <h4>Trabajamos para lograr buenos negocios, solidas relaciones comerciales y amistades duraderas</h4>
               <p>Remates Ferias - Consignaciones - Operaciones Particulares - Remates Televisados - Remates de Reproductores</p>
               <Link href="/nosotros">
                 <p className="btn btn-outline-light">Más información</p>
