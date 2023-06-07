@@ -90,7 +90,6 @@ export default function FormRegister({ remate }) {
       {goal ? (
         <>
           <div className="alert alert-success">Su formulario fue enviado exitosamente</div>
-          <button className="btn btn-primary">ver videos</button>
           <button className="btn btn-outline-primary" onClick={() => setGoal(false)}>
             volver
           </button>
