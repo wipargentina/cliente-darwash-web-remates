@@ -4,9 +4,58 @@ footer {
   width: 100%;
   background-color: $secondary;
   color: white;
-  display: flex;
-  align-items: center;
-  height: 100px;
   .container {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    justify-content: space-between;
+    font-size: 0.94rem;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .links {
+      a {
+        text-decoration: none;
+        color: white;
+        opacity: 0.6;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    .container {
+      height: 250px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.94rem;
+      gap: 20px;
+      text-align: center;
+      .brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .links {
+        a {
+          text-decoration: none;
+          color: white;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }
