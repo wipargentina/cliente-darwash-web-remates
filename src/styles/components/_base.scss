@@ -23,3 +23,9 @@ section {
     margin-bottom: 30px;
   }
 }
+
+@media (max-width: 767px) {
+  body {
+    margin-bottom: 250px;
+  }
+}

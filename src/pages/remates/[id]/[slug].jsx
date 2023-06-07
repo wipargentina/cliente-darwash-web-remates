@@ -10,26 +10,32 @@ export default function Remate({ remate }) {
     <section className="remate">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-6 col-xl-5">
-            <h1 className="title mb-3">{title}</h1>
-            <img src={cover?.fields.file.url} alt="" className="img-fluid mb-3 image" />
-            <h4 className="date text-uppercase mb-0">{moment(date).format('dddd D MMMM')}</h4>
-            <p className="place text-uppercase mb-3">{place}</p>
-            <hr />
-            {body ? <div className="body">{documentToReactComponents(body)}</div> : ''}
+          <div className="col-md-6 col-xl-5 mb-5 mb-sm-0">
+            <div className="remate-info">
+              <h1 className="title mb-3">{title}</h1>
+              <img src={cover?.fields.file.url} alt="" className="img-fluid image" />
 
-            {videos ? (
-              <>
-                <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={videos}>
-                  Ver VIdeos
-                </a>
-              </>
-            ) : (
-              'no hay video'
-            )}
+              <h4 className="date text-uppercase">{moment(date).format('dddd D MMMM')}</h4>
+              <p className="place text-uppercase">
+                <i className="fa-solid fa-fw fa-location-dot"></i>
+                {place}
+              </p>
+
+              {body ? <div className="body">{documentToReactComponents(body)}</div> : ''}
+
+              {videos ? (
+                <>
+                  <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={videos}>
+                    Ver Videos
+                  </a>
+                </>
+              ) : (
+                ''
+              )}
+            </div>
           </div>
           <div className="d-none d-xl-block col-sm-1"></div>
-          <div className="col-6 col-xl-4">
+          <div className="col-md-6 col-xl-4">
             <FormRegister remate={remate} />
             <img src={flyer?.fields.file.url} alt="" className="img-fluid mb-3 image" />
           </div>
