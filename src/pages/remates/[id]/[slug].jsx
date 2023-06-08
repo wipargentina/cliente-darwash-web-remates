@@ -30,7 +30,17 @@ export default function Remate({ remate }) {
                   </a>
                 </>
               ) : (
-                ''
+                'no hay videos'
+              )}
+
+              {videos ? (
+                <>
+                  <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={videos}>
+                    Ver Videos
+                  </a>
+                </>
+              ) : (
+                'no hay documentos'
               )}
             </div>
           </div>

@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { GTM_ID } from '../lib/gtm';
-import { FB_PIXEL_ID } from '../context/FbCapiContext';
 
 export default class MyDocument extends Document {
   render() {
@@ -14,9 +13,6 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
             referrerPolicy="no-referrer"
           />
-          <noscript>
-            <iframe title="fbcapi" src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`} height="0" width="0" style={{ display: 'none', visibility: 'hidden' }} />
-          </noscript>
         </Head>
         <body>
           <noscript>
