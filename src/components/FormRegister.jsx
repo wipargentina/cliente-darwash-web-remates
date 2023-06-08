@@ -17,11 +17,10 @@ const makeRandomId = (length) => {
 
 export default function FormRegister({ remate }) {
   const router = useRouter();
-  // console.log(router);
-  const { query } = router;
-  const { title, date } = remate;
+  const { title, date, document, videos } = remate;
 
-  //console.log(query.id);
+  const [download, setDownload] = useState(false);
+  const { query } = router;
 
   const initialValues = {
     id: query.id,
@@ -31,6 +30,7 @@ export default function FormRegister({ remate }) {
     email: '',
     phone: '',
     remate: title,
+    payload: 'create',
     date,
   };
 
@@ -64,7 +64,6 @@ export default function FormRegister({ remate }) {
       }
 
       leads(values).then((res) => {
-        // console.log(res);
         if (res.status === 200) {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
@@ -72,8 +71,8 @@ export default function FormRegister({ remate }) {
             category: 'goals',
           });
           setGoal(true);
+          setDownload(true);
           reset();
-          //router.push(`/remates/${query.id}/${query.slug}/gracias`);
         } else {
           setError(true);
         }
@@ -82,53 +81,100 @@ export default function FormRegister({ remate }) {
       });
 
       //console.log(values);
-      console.log(goal);
+      // console.log(goal);
     }
   };
+
   return (
     <div className="form-register">
-      {goal ? (
-        <>
-          <div className="alert alert-success">Su formulario fue enviado exitosamente</div>
-          <button className="btn btn-outline-primary" onClick={() => setGoal(false)}>
-            volver
-          </button>
-        </>
-      ) : (
-        <Form onSubmit={handelSubmit}>
-          <h4>Solitá más información</h4>
-          <p>
-            Remate: {title} (<span className="">{moment(date).format('dddd D MMMM')}</span>)
-          </p>
-          <div className="row">
-            <div className="col-md-6">
-              <div className="mb-3">
-                <label htmlFor="fname">Nombre</label>
-                <input type="text" name="fname" value={fname} onChange={handleInputChange} className="form-control" />
+      <Form onSubmit={handelSubmit}>
+        {document || videos ? (
+          <>
+            <h4>Accede al contenido</h4>
+            <p>
+              Completá el formulario y accede a los contenido del remate:{' '}
+              <b>
+                {title} (<span className="">{moment(date).format('dddd D MMMM')}</span>)
+              </b>
+            </p>
+            {download ? (
+              <>
+                {document ? (
+                  <a href={document} className="btn btn-warning text-uppercase text-white mb-4 me-2">
+                    Descargar Catalogo <i className="fa-solid fa-fw fa-file-pdf"></i>
+                  </a>
+                ) : (
+                  ''
+                )}
+                {videos ? (
+                  <a href={videos} className="btn btn-warning text-uppercase text-white mb-4 me-2">
+                    Ver Videos <i className="fa-solid fa-fw fa-tv"></i>
+                  </a>
+                ) : (
+                  ''
+                )}
+              </>
+            ) : (
+              ''
+            )}
+          </>
+        ) : (
+          <>
+            <h4>Solitá más información</h4>
+            <p>
+              Completá el formulario para recibir más información sobre el remate:{' '}
+              <b>
+                {title} (<span className="">{moment(date).format('dddd D MMMM')}</span>)
+              </b>
+            </p>
+          </>
+        )}
+        {goal ? (
+          <>
+            <div className="alert alert-success">Su formulario fue enviado exitosamente</div>
+            <button className="btn btn-outline-primary" onClick={() => setGoal(false)}>
+              volver
+            </button>
+          </>
+        ) : (
+          <>
+            <div className="row">
+              <div className="col-md-6">
+                <div className="mb-3">
+                  <label htmlFor="fname">
+                    Nombre <small className="text-danger">*</small>
+                  </label>
+                  <input type="text" name="fname" value={fname} onChange={handleInputChange} className="form-control" />
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="mb-3">
+                  <label htmlFor="lname">
+                    Apellido <small className="text-danger">*</small>
+                  </label>
+                  <input type="text" name="lname" value={lname} onChange={handleInputChange} className="form-control" />
+                </div>
               </div>
             </div>
-            <div className="col-md-6">
-              <div className="mb-3">
-                <label htmlFor="lname">Apellido</label>
-                <input type="text" name="lname" value={lname} onChange={handleInputChange} className="form-control" />
-              </div>
+            <div className="mb-3">
+              <label htmlFor="email">
+                Email <small className="text-danger">*</small>
+              </label>
+              <input type="text" name="email" value={email} onChange={handleInputChange} className="form-control" />
             </div>
-          </div>
-
-          <div className="mb-3">
-            <label htmlFor="email">Email</label>
-            <input type="text" name="email" value={email} onChange={handleInputChange} className="form-control" />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="phone">Telefono</label>
-            <input type="text" name="phone" value={phone} onChange={handleInputChange} className="form-control" />
-          </div>
-          <Button variant="primary" type="submit">
-            {loading ? 'Enviando...' : 'Enviar'}
-          </Button>
-          {error ? <div className="alert alert-danger mt-3">Debe completar todos los campos</div> : ''}
-        </Form>
-      )}
+            <div className="mb-3">
+              <label htmlFor="phone">
+                Telefono <small className="text-danger">*</small>
+              </label>
+              <input type="text" name="phone" value={phone} onChange={handleInputChange} className="form-control" />
+            </div>
+            <Button variant="primary" type="submit">
+              {loading ? 'Enviando...' : 'Enviar'}
+            </Button>
+            {error ? <div className="alert alert-danger mt-3">Debe completar todos los campos</div> : ''}
+          </>
+        )}
+      </Form>
     </div>
   );
 }
