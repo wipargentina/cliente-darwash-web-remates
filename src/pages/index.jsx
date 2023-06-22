@@ -23,7 +23,7 @@ export async function getServerSideProps() {
   const res = await client.getEntries({
     content_type: 'remates',
     order: 'fields.date',
-    limit: 2,
+    // limit: 2,
     'fields.date[gte]': formatNow,
   });
 
