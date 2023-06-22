@@ -1,0 +1,89 @@
+.slider {
+  position: relative;
+  background-color: darken($primary, 20%);
+  min-height: 600px;
+
+  .carousel {
+    opacity: 0.5;
+    &-item {
+      min-height: 600px;
+      background-size: cover;
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: white;
+    z-index: 99;
+    min-height: 600px;
+    padding-top: 80px;
+
+    &-data {
+      text-shadow: 0 0 12px darken($primary, 20%);
+      h1 {
+        font-size: 4rem;
+        font-weight: 900;
+      }
+      h4 {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        margin-bottom: 10px;
+      }
+      p {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .slider {
+    position: relative;
+    background-color: darken($primary, 20%);
+    min-height: 1000px;
+
+    .carousel {
+      opacity: 0.5;
+      &-item {
+        object-fit: cover;
+        min-height: 1000px;
+      }
+    }
+
+    .content {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      color: white;
+      z-index: 99;
+      min-height: 1000px;
+      padding-top: 50px;
+
+      &-data {
+        text-shadow: 0 0 12px darken($primary, 20%);
+        color: white;
+        margin-bottom: 10px;
+
+        h1 {
+          font-size: 3rem;
+          line-height: 3.3rem;
+          font-weight: 900;
+          margin-bottom: 20px;
+        }
+        h4 {
+          font-size: 1.4rem;
+          line-height: 2rem;
+          margin-bottom: 10px;
+        }
+        p {
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    &-remates {
+    }
+  }
+}

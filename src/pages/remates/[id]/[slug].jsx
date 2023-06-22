@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import moment from 'moment';
 
 export default function Remate({ remate }) {
-  const { title, cover, place, date, body, flyer, document, videos } = remate;
+  const { title, cover, place, date, body, flyer, document } = remate;
   console.log(document);
   return (
     <section className="remate">
@@ -13,6 +13,7 @@ export default function Remate({ remate }) {
           <div className="col-md-6 col-xl-5 mb-5 mb-sm-0">
             <div className="remate-info">
               <h1 className="title mb-3">{title}</h1>
+              {/* eslint-disable-next-line */}
               <img src={cover?.fields.file.url} alt="" className="img-fluid image" />
 
               <h4 className="date text-uppercase">{moment(date).format('dddd D MMMM')}</h4>
@@ -22,31 +23,12 @@ export default function Remate({ remate }) {
               </p>
 
               {body ? <div className="body">{documentToReactComponents(body)}</div> : ''}
-
-              {videos ? (
-                <>
-                  <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={videos}>
-                    Ver Videos
-                  </a>
-                </>
-              ) : (
-                'no hay videos'
-              )}
-
-              {videos ? (
-                <>
-                  <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={videos}>
-                    Ver Videos
-                  </a>
-                </>
-              ) : (
-                'no hay documentos'
-              )}
             </div>
           </div>
           <div className="d-none d-xl-block col-sm-1"></div>
           <div className="col-md-6 col-xl-4">
             <FormRegister remate={remate} />
+            {/* eslint-disable-next-line */}
             <img src={flyer?.fields.file.url} alt="" className="img-fluid mb-3 image" />
           </div>
         </div>
