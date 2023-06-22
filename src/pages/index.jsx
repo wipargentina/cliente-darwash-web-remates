@@ -1,11 +1,11 @@
-import Hero from '@components/Hero';
+import Slider from '@components/Slider';
 import formatDate from '@utils/formatDate';
 import { createClient } from 'contentful';
 
 export default function Home({ remates }) {
   return (
     <>
-      <Hero remates={remates} />
+      <Slider remates={remates} />
     </>
   );
 }
