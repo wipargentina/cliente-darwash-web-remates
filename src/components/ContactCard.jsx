@@ -4,6 +4,7 @@ export default function ContactCard({ contact }) {
   const { avatar, title, email, phone } = contact.fields;
   return (
     <div className="card mb-3">
+      {/* eslint-disable-next-line */}
       <img src={avatar.fields.file.url} alt="" className="card-img-top" />
       <div className="card-body">
         <h4>{title}</h4>

@@ -10,6 +10,7 @@ export default function SlideCard({ remate }) {
     <div className="slide-item">
       <Link href={`/remates/${id}/${slug}`}>
         <Button variant="secondary" className="slide-image">
+          {/* eslint-disable-next-line */}
           <img src={cover.fields.file.url} alt={title} />
         </Button>
       </Link>
