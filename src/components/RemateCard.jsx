@@ -10,7 +10,7 @@ function RemateCard({ remate }) {
 
   console.log(remate.fields);
   return (
-    <Card>
+    <Card className="mb-4">
       <Card.Img variant="top" src={cover.fields.file.url} />
       <Card.Body>
         <h4 className="card-title mb-0">{title}</h4>
