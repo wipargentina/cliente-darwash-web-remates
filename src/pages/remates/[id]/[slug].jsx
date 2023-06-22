@@ -23,7 +23,7 @@ export default function Remate({ remate }) {
 
               {body ? <div className="body">{documentToReactComponents(body)}</div> : ''}
 
-              {videos ? (
+              {/* {videos ? (
                 <>
                   <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={videos}>
                     Ver Videos
@@ -41,7 +41,7 @@ export default function Remate({ remate }) {
                 </>
               ) : (
                 'no hay documentos'
-              )}
+              )} */}
             </div>
           </div>
           <div className="d-none d-xl-block col-sm-1"></div>
