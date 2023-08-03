@@ -120,7 +120,7 @@ export default function FormRegister({ remate }) {
           </>
         ) : (
           <>
-            <h4>Solitá más información</h4>
+            <h4>Solicitá más información</h4>
             <p>
               Completá el formulario para recibir más información sobre el remate:{' '}
               <b>
